@@ -11,7 +11,7 @@ public partial class StandardTipPage : ContentPage
         billInput.TextChanged += (s, e) => CalculateTip();
     }
 
-    void CalculateTip()
+    private void CalculateTip()
     {
         double bill;
 
@@ -25,29 +25,19 @@ public partial class StandardTipPage : ContentPage
         }
     }
 
-    void OnLight(object sender, EventArgs e)
+    private void OnLight(object sender, EventArgs e)
     {
-        LayoutRoot.BackgroundColor = colorSilver;
-
-        tipLabel.TextColor = colorNavy;
-        billLabel.TextColor = colorNavy;
-        totalLabel.TextColor = colorNavy;
-        tipOutput.TextColor = colorNavy;
-        totalOutput.TextColor = colorNavy;
+        Resources["fgColor"] = colorNavy;
+        Resources["bgColor"] = colorSilver;
     }
 
-    void OnDark(object sender, EventArgs e)
+    private void OnDark(object sender, EventArgs e)
     {
-        LayoutRoot.BackgroundColor = colorNavy;
-
-        tipLabel.TextColor = colorSilver;
-        billLabel.TextColor = colorSilver;
-        totalLabel.TextColor = colorSilver;
-        tipOutput.TextColor = colorSilver;
-        totalOutput.TextColor = colorSilver;
+        Resources["fgColor"] = colorSilver;
+        Resources["bgColor"] = colorNavy;
     }
 
-    async void GotoCustom(object sender, EventArgs e)
+    private async void GotoCustom(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync(nameof(CustomTipPage));
     }

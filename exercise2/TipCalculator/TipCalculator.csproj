@@ -49,6 +49,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="old_\_StandardTipPage.xaml.cs">
+	    <Generator>MSBuild:Compile</Generator>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="CustomTipPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
